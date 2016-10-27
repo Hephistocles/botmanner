@@ -59,6 +59,11 @@ p {
   margin-bottom: 20px;
 }
 
+section.go {
+    background-image: url('../img/go3.jpg');
+    color: white;
+}
+
 .navbar-default {
   background-color: white;
   border-color: rgba(34, 34, 34, 0.05);
