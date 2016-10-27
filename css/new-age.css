@@ -140,7 +140,7 @@ section.go {
     border-color: rgba(34, 34, 34, 0.1);
   }
   .navbar-default.affix .navbar-header .navbar-brand {
-    color: #222222;
+    color: darkorchid;
   }
   .navbar-default.affix .navbar-header .navbar-brand:hover,
   .navbar-default.affix .navbar-header .navbar-brand:focus {
@@ -476,7 +476,7 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #222222;
+  webkit-tap-highlight-color: grey;
 }
 
 
