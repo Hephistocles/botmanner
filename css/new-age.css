@@ -67,6 +67,10 @@ section.go {
   background-attachment: fixed;
 }
 
+.navbar-default .slogan {
+  font-size: 16px; color: #fdcc52; font-weight: 400;
+}
+
 .navbar-default {
   background-color: white;
   border-color: rgba(34, 34, 34, 0.05);
@@ -144,6 +148,9 @@ section.go {
   }
   .navbar-default.affix .navbar-header .navbar-brand {
     color: indianred;
+  }
+  .navbar-default.affix .slogan {
+    color: #222222;
   }
   .navbar-default.affix .navbar-header .navbar-brand:hover,
   .navbar-default.affix .navbar-header .navbar-brand:focus {
@@ -496,7 +503,7 @@ body {
   /*margin-top: 350px;*/
 }
 /*.device-1:hover {*/
-  /*margin-top: 270px;*/
+  /*margin-top: -120px;*/
 /*}*/
 
 .device-2 {
