@@ -140,7 +140,7 @@ section.go {
     border-color: rgba(34, 34, 34, 0.1);
   }
   .navbar-default.affix .navbar-header .navbar-brand {
-    color: darkorchid;
+    color: indianred;
   }
   .navbar-default.affix .navbar-header .navbar-brand:hover,
   .navbar-default.affix .navbar-header .navbar-brand:focus {
@@ -443,7 +443,7 @@ footer ul li a.active {
 .btn-outline:active,
 .btn-outline.active {
   /*color: white;  */
-  color: darkorchid;
+  color: indianred;
   background-color: #fdcc52;
   border-color: #fdcc52;
 }
@@ -545,7 +545,7 @@ a.socialIcon:hover, .socialHoverClass {
   width: 65px;
   height: 65px;
   font-size:20px;
-  color: darkorchid;
+  color: indianred;
 }
 .social-circle li i {
   margin:0;
@@ -567,7 +567,7 @@ a.socialIcon:hover, .socialHoverClass {
 }
 .social-circle i {
   /*color: #fff;*/
-  color: darkorchid;
+  color: indianred;
   -webkit-transition: all 0.8s;
   -moz-transition: all 0.8s;
   -o-transition: all 0.8s;
