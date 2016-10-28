@@ -60,8 +60,11 @@ p {
 }
 
 section.go {
-  background-image: url('../img/go3.jpg');
+  background-image: url('../img/go-plain.jpg');
   color: white;
+  background: linear-gradient(hsla(43,98%,30%,0.5),hsla(43,98%,30%,0.5)), url(../img/go-plain.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .navbar-default {
