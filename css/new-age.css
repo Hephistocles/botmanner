@@ -173,8 +173,9 @@ header {
 }
 header .header-content {
   text-align: center;
-  padding: 150px 0 50px;
+  padding: 80px 0 150px;
   position: relative;
+  margin-top: 100px;
 }
 header .header-content .header-content-inner {
   position: relative;
@@ -209,6 +210,7 @@ header .device-container .screen img {
     text-align: left;
     padding: 0;
     height: 100vh;
+    margin-top: 0px;
   }
 
   header .header-content .header-content-inner {
@@ -301,6 +303,7 @@ section.features .feature-item {
 section.features .device-container {
   margin-bottom: 100px;
 }
+
 @media (min-width: 992px) {
   section.features .device-container {
     margin-bottom: 0;
@@ -481,44 +484,103 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: grey;
 }
-
+.device-mockup {
+  position: absolute!important;
+}
 
 .device-1 {
-  margin-left: -410px;
-  margin-top: 290px;
+  position: absolute;
+  /*margin-left: -410px;*/
+  margin-left: -350px;
+  margin-top: -120px;
   /*margin-top: 350px;*/
 }
-.device-1:hover {
-  margin-top: 270px;
-}
+/*.device-1:hover {*/
+  /*margin-top: 270px;*/
+/*}*/
 
 .device-2 {
-  margin-left: -10px;
-  margin-top: -340px;
+  position: absolute;
+  /*margin-left: -10px;*/
+  /*right: 200px;*/
+  margin-left: 10px;
+  margin-top: -120px;
 }
-.device-2:hover {
-  margin-top: -360px;
-}
+/*.device-2:hover {*/
+  /*margin-top: -360px;*/
+/*}*/
 
 .device-3 {
-  margin-left: -210px;
-  margin-top: -980px;
+  position: absolute;
+  margin-left: -140px;
+  /*right: 10px;*/
+  margin-top: -150px;
 }
-.device-3:hover {
-  margin-top: -1000px;
-}
+/*.device-3:hover {*/
+  /*margin-top: -1000px;*/
+/*}*/
 
 /* footer social icons */
 ul.social-network {
-  list-style: none;
-  display: inline;
-  margin-left:0 !important;
-  padding: 0;
+  display: none;
+}
+/*@media (min-width: 1000px) {*/
+  /*ul.social-network {*/
+    /*list-style: none;*/
+    /*display: inline;*/
+    /*margin-left: 0 !important;*/
+    /*padding: 0;*/
+    /*margin-top: -30px;*/
+  /*}*/
+/*}*/
+
+@media (min-width: 1200px) {
+  ul.social-network {
+    list-style: none;
+    display: inline;
+    margin-left: 0 !important;
+    padding: 0;
+  }
 }
 ul.social-network li {
   display: inline;
   margin: 0 2px;
 }
+.smartphones {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .smartphones {
+    position: absolute;
+    right: -150px;
+    width: 23%;
+    height: 600px;
+    bottom:20px;
+    display: block;
+  }
+}
+
+@media (min-width: 1450px) {
+  .smartphones {
+    position: absolute;
+    right: 10px;
+    width: 20%;
+    height: 600px;
+    bottom:20px;
+    display: block;
+  }
+}
+/*@media (min-width: 1200px) {*/
+  /*.smartphones {*/
+    /*position: absolute;*/
+    /*right: 10px;*/
+    /*width: 200px;*/
+    /*height: 600px;*/
+    /*top:0;*/
+    /*display: block;*/
+  /*}*/
+/*}*/
 
 
 /* footer social icons */
