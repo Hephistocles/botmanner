@@ -549,6 +549,7 @@ a.socialIcon:hover, .socialHoverClass {
   height: 65px;
   font-size:20px;
   color: indianred;
+  cursor: default;
 }
 .social-circle li i {
   margin:0;
