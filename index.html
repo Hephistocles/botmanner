@@ -321,8 +321,8 @@
 
     </footer>
 
-    <div id="contact-modal" style="display:none">
-        <form class="cd-form floating-labels" id="contact-form">
+    <div id="contact-modal" style="display:none" onclick="document.getElementById('contact-modal').style.display='none'">
+        <form class="cd-form floating-labels" id="contact-form" onclick="event.stopPropagation()">
             <fieldset>
 
                 <div class="error-message" id="form-error" style="display:none">
@@ -387,11 +387,13 @@
     <script id="_agile_min_js" type="text/javascript" src="https://botbot.agilecrm.com/stats/min/agile-min.js"></script>
     <script src="js/jquery-2.1.1.js"></script>
     <script type="text/javascript">
-        Agile_API.on_after_load = function() {
+        (function() {
+            console.log("Loaded")
             _agile.set_account('i8hthkulur3dhq9r1uifr7uqgj', 'botbot');
             _agile.track_page_view();
             _agile_execute_web_rules();
-        };
+            document.getElementById('contact-form').addEventListener("submit", email_submit);
+        })();
 
         function hide_form() {
             document.getElementById("contact-modal").style.display = "none"
@@ -400,8 +402,6 @@
         function show_form() {
             document.getElementById("contact-modal").style.display = "block"
         }
-
-        document.getElementById('contact-form').addEventListener("submit", email_submit);
 
         function email_submit(event) {
             event.preventDefault();
@@ -423,9 +423,10 @@
             // contact.status = "incomplete";
             // contact.custom_id = "EN001C";
 
-            // _agile.set_email(contact.email)
-            _agile.create_contact(contact, {
+            _agile.set_email(contact.email)
+            _agile.get_contact(contact.email, {
                 success: function(data) {
+                    // cntact already exists - just post note
                     var note = {};
                     note.subject = "Website Contact Request"
                     note.description = document.getElementById('cd-textarea').value;
@@ -445,28 +446,60 @@
                         }
                     });
                 },
-
                 error: function(data) {
-                    console.error(data)
-                    document.getElementById('form-error').style.display = "block"
-                    document.getElementById('form-error').innerHTML = "<p>" + data.error + "</p>"
+                    // contact doesn't exist - create first
+                    _agile.create_contact(contact, {
+                        success: function(data) {
+                            console.log("Contact created, next for the note")
+                            var note = {};
+                            note.subject = "Website Contact Request"
+                            note.description = document.getElementById('cd-textarea').value;
 
+                            _agile.add_note(note, {
+                                success: function(data) {
+                                    console.log("success");
+                                    console.log(data)
+                                    alert("Message posted successfully. We will be in touch soon!");
+                                    hide_form();
+                                },
+                                error: function(data) {
+                                    console.error(data)
+                                    document.getElementById('form-error').style.display = "block"
+                                    document.getElementById('form-error').innerHTML = "<p>" + data.error + "</p>"
+
+                                }
+                            });
+                        },
+
+                        error: function(data) {
+                            console.error(data)
+                            document.getElementById('form-error').style.display = "block"
+                            document.getElementById('form-error').innerHTML = "<p>" + data.error + "</p>"
+
+                        }
+
+                    });
                 }
-
             });
         }
     </script>
-<!-- Google analytics -->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <!-- Google analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-86479414-1', 'auto');
-    ga('send', 'pageview');
-
-</script>
+        ga('create', 'UA-86479414-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 
 </body>
 
