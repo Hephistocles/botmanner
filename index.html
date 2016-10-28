@@ -26,6 +26,10 @@
 
     <!-- Theme CSS -->
     <link href="css/new-age.css" rel="stylesheet">
+
+    <script src="js/modernizr.js"></script>
+    <!-- Modernizr -->
+
     <script src="https://use.fontawesome.com/882746b9df.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -45,7 +49,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicons/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
@@ -57,40 +61,39 @@
 
 <body id="page-top">
 
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top"><img src="img/manner-logo-head.png" style="width: 35px; float:left; margin-top: -3px; padding-right: 5px;"/> Manner</a>
-        </div>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="img/manner-logo-head.png" style="width: 35px; float:left; margin-top: -3px; padding-right: 5px;" /> Manner</a>
+            </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <!--<li>-->
-                <!--<a class="page-scroll" href="#download">Download</a>-->
-                <!--</li>-->
-                <!--
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <!--<li>-->
+                    <!--<a class="page-scroll" href="#download">Download</a>-->
+                    <!--</li>-->
+                    <!--
                 <li>
                     <a class="page-scroll" href="#pricing">Pricing</a>
                 </li>
                 -->
-                <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
-                </li>
-            </ul>
+                    <li>
+                        <a class="page-scroll" href="#contact" onclick="show_form(1);">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
+        <!-- /.container-fluid -->
+    </nav>
 
-<header>
-    <div class="container">
-
+    <header>
+        <div class="container">
         <div class="row">
             <div class="col-lg-7 col-sm-12">
                 <div class="header-content">
@@ -101,12 +104,13 @@
                         <h2>Your customers have unique online voices.
                             <br />
                             Manner uses state-of-the-art deep reinforcement learning to allow you to understand your user's tone, and tailor your response to engage in the ways most likely to spark a meaningful connection.</h2>
-                        <a href="#download" class="btn btn-outline btn-xl page-scroll right-align">Start Now</a>
+                            <a href="#download" class="btn btn-outline btn-xl page-scroll right-align" onclick="show_form(2);">Start Now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-sm-5">
+                <div class="col-sm-5">
+                </div>
             </div>
         </div>
         <div class="smartphones">
@@ -146,8 +150,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
 <section class="text-center header-extra" style="background-color: white;">
     <div class="container">
@@ -166,28 +169,27 @@
                 </ul>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="go" class="download go text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h2 class="section-heading">A/B testing for the future</h2>
-                <p>
-                    Traditional A/B testing requires intelligent design to select variants to test. By leveraging the same breakthrough techniques allowing DeepMind to beat the Go world champion [<a href="https://www.wired.com/2016/01/in-a-huge-breakthrough-googles-ai-beats-a-top-player-at-the-game-of-go/">Wired article</a>], Manner can automatically generate conversational variants to help your messages evolve
-                    and grow stronger.
-                </p>
-                <!--<div class="badges">-->
-                <!--<a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>-->
-                <!--<a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>-->
-                <!--</div>-->
+    <section id="go" class="download go text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="section-heading">A/B testing for the future</h2>
+                    <p>
+                        Traditional A/B testing requires intelligent design to select variants to test. By leveraging the same breakthrough techniques allowing DeepMind to beat the Go world champion [<a href="https://www.wired.com/2016/01/in-a-huge-breakthrough-googles-ai-beats-a-top-player-at-the-game-of-go/">Wired article</a>],
+                        Manner can automatically generate conversational variants to help your messages evolve and grow stronger.
+                    </p>
+                    <!--<div class="badges">-->
+                    <!--<a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>-->
+                    <!--<a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>-->
+                    <!--</div>-->
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!--
+    <!--
 <section id="features" class="features">
     <div class="container">
         <div class="row">
@@ -271,37 +273,36 @@
 </section>
 -->
 
-<section class="cta">
-    <div class="cta-content">
-        <div class="container">
-            <h2>Just five lines for simple integration.</h2>
-            <a href="#contact" class="btn btn-outline btn-xl page-scroll">Let's Get Started!</a>
+    <section class="cta">
+        <div class="cta-content">
+            <div class="container">
+                <h2>Just five lines for simple integration.</h2>
+                <a href="#contact" class="btn btn-outline btn-xl page-scroll" onclick="show_form(3)">Let's Get Started!</a>
+            </div>
         </div>
-    </div>
-    <div class="overlay"></div>
-</section>
+        <div class="overlay"></div>
+    </section>
 
-<!--<section id="contact" class="contact bg-primary">-->
-<!--<div class="container">-->
-<!--<h2>We <i class="fa fa-heart"></i> new friends!</h2>-->
-<!--<ul class="list-inline list-social">-->
-<!--<li class="social-twitter">-->
-<!--<a href="#"><i class="fa fa-twitter"></i></a>-->
-<!--</li>-->
-<!--<li class="social-facebook">-->
-<!--<a href="#"><i class="fa fa-facebook"></i></a>-->
-<!--</li>-->
-<!--<li class="social-google-plus">-->
-<!--<a href="#"><i class="fa fa-google-plus"></i></a>-->
-<!--</li>-->
-<!--</ul>-->
-<!--</div>-->
-<!--</section>-->
+    <!--<div class="container">-->
+    <!--<h2>We <i class="fa fa-heart"></i> new friends!</h2>-->
+    <!--<ul class="list-inline list-social">-->
+    <!--<li class="social-twitter">-->
+    <!--<a href="#"><i class="fa fa-twitter"></i></a>-->
+    <!--</li>-->
+    <!--<li class="social-facebook">-->
+    <!--<a href="#"><i class="fa fa-facebook"></i></a>-->
+    <!--</li>-->
+    <!--<li class="social-google-plus">-->
+    <!--<a href="#"><i class="fa fa-google-plus"></i></a>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</section>-->
 
-<footer>
-    <div class="container">
-        <p>&copy; 2016 Manner. All Rights Reserved. <a href="https://icons8.com" style="color: gray">Icon pack by Icons8</a></p>
-        <!--
+    <footer>
+        <div class="container">
+            <p>&copy; 2016 Manner. All Rights Reserved. <a href="https://icons8.com" style="color: gray">Icon pack by Icons8</a></p>
+            <!--
         <ul class="list-inline">
             <li>
                 <a href="#">Privacy</a>
@@ -314,33 +315,192 @@
             </li>
         </ul>
       -->
+        </div>
+
+    </footer>
+
+    <div id="contact-modal" style="display:none" onclick="document.getElementById('contact-modal').style.display = 'none'; ga('send', 'event', 'Form', 'closed', 'Contact Form', 1);">
+        <form class="cd-form floating-labels" id="contact-form" onclick="event.stopPropagation();">
+            <fieldset>
+
+                <div class="error-message" id="form-error" style="display:none">
+                    <p>Please enter a valid email address</p>
+                </div>
+
+                <h1>Contact us to get started.</h1>
+                <h4>Or email us at <a href="mailto:hello@botmanner.com">hello@botmanner.com</a>.</h4>
+
+                <div class="icon">
+                    <label class="cd-label" for="cd-first-name">First Name</label>
+                    <input class="user" type="text" name="cd-first-name" id="cd-first-name" required>
+                </div>
+                <div class="icon">
+                    <label class="cd-label" for="cd-last-name">Last Name</label>
+                    <input class="user" type="text" name="cd-last-name" id="cd-last-name" required>
+                </div>
+
+                <!-- ... -->
+                <div class="icon">
+                    <label class="cd-label" for="cd-name">Email</label>
+                    <input class="email" type="email" name="cd-email" id="cd-email" required>
+                </div>
+
+                <!-- ... -->
+                <div class="icon">
+                    <label class="cd-label" for="cd-name">Company</label>
+                    <input class="company" type="text" name="cd-company" id="cd-company">
+                </div>
+
+
+
+                <div class="icon">
+                    <label class="cd-label" for="cd-textarea">Your message (optional)</label>
+                    <textarea class="message" name="cd-textarea" id="cd-textarea"></textarea>
+                </div>
+                <!--
+                <div>
+                    <input type="checkbox" id="cd-checkbox-1" >
+                    <label for="cd-checkbox-1" style="margin-bottom:0">Please contact me with more information.</label>
+                </div>
+                -->
+                <div>
+                    <input type="submit" value="Send Message">
+                </div>
+            </fieldset>
+        </form>
     </div>
 
-</footer>
 
-<!-- jQuery -->
-<script src="vendor/jquery/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-<!-- Plugin JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-<!-- Theme JavaScript -->
-<script src="js/new-age.min.js"></script>
+    <!-- Theme JavaScript -->
+    <script src="js/new-age.min.js"></script>
+    <script src="js/main.js"></script>
+    <script id="_agile_min_js" type="text/javascript" src="https://botbot.agilecrm.com/stats/min/agile-min.js"></script>
+    <script src="js/jquery-2.1.1.js"></script>
+    <script type="text/javascript">
+        (function() {
+            console.log("Loaded")
+            _agile.set_account('i8hthkulur3dhq9r1uifr7uqgj', 'botbot');
+            _agile.track_page_view();
+            _agile_execute_web_rules();
+            document.getElementById('contact-form').addEventListener("submit", email_submit);
+        })();
 
-<!-- Google analytics -->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        function hide_form() {
+            document.getElementById("contact-modal").style.display = "none"
+        }
 
-    ga('create', 'UA-86479414-1', 'auto');
-    ga('send', 'pageview');
+        function show_form(button_number) {
+            document.getElementById("contact-modal").style.display = "block";
+            ga('send', 'event', 'Form', 'open', 'Contact Form', button_number);
+        }
 
-</script>
+        function email_submit(event) {
+            event.preventDefault();
+            ga('send', 'event', 'Form', 'submit', 'Contact Form', 1);
+            var contact = {};
+            contact.email = document.getElementById('cd-email').value;
+            contact.first_name = document.getElementById('cd-first-name').value;
+            contact.last_name = document.getElementById('cd-last-name').value;
+            contact.company = document.getElementById('cd-company').value;
+            contact.title = "lead";
+            // contact.phone = "+1-541-754-3010";
+            // contact.website = "http://www.example.com";
+            // var address = {"city":"new delhi", "state":"delhi", "country":"india"};
+
+            // contact.address = JSON.stringify(address);
+            contact.tags = "website visitor";
+            console.log(contact);
+
+            // Custom fields can be added to contact object as
+            // contact.status = "incomplete";
+            // contact.custom_id = "EN001C";
+
+            _agile.set_email(contact.email)
+            _agile.get_contact(contact.email, {
+                success: function(data) {
+                    // cntact already exists - just post note
+                    var note = {};
+                    note.subject = "Website Contact Request"
+                    note.description = document.getElementById('cd-textarea').value;
+
+                    _agile.add_note(note, {
+                        success: function(data) {
+                            console.log("success");
+                            console.log(data)
+                            alert("Message posted successfully. We will be in touch soon!");
+                            hide_form();
+                        },
+                        error: function(data) {
+                            console.error(data)
+                            document.getElementById('form-error').style.display = "block"
+                            document.getElementById('form-error').innerHTML = "<p>" + data.error + "</p>"
+
+                        }
+                    });
+                },
+                error: function(data) {
+                    // contact doesn't exist - create first
+                    _agile.create_contact(contact, {
+                        success: function(data) {
+                            console.log("Contact created, next for the note")
+                            var note = {};
+                            note.subject = "Website Contact Request"
+                            note.description = document.getElementById('cd-textarea').value;
+
+                            _agile.add_note(note, {
+                                success: function(data) {
+                                    console.log("success");
+                                    console.log(data)
+                                    alert("Message posted successfully. We will be in touch soon!");
+                                    hide_form();
+                                },
+                                error: function(data) {
+                                    console.error(data)
+                                    document.getElementById('form-error').style.display = "block"
+                                    document.getElementById('form-error').innerHTML = "<p>" + data.error + "</p>"
+
+                                }
+                            });
+                        },
+
+                        error: function(data) {
+                            console.error(data)
+                            document.getElementById('form-error').style.display = "block"
+                            document.getElementById('form-error').innerHTML = "<p>" + data.error + "</p>"
+
+                        }
+
+                    });
+                }
+            });
+        }
+    </script>
+    <!-- Google analytics -->
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-86479414-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 
 </body>
 
