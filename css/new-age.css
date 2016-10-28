@@ -485,16 +485,27 @@ body {
 
 .device-1 {
   margin-left: -410px;
-  margin-top: 270px;
+  margin-top: 290px;
   /*margin-top: 350px;*/
 }
+.device-1:hover {
+  margin-top: 270px;
+}
+
 .device-2 {
   margin-left: -10px;
-  margin-top: -330px;
+  margin-top: -340px;
 }
+.device-2:hover {
+  margin-top: -360px;
+}
+
 .device-3 {
   margin-left: -210px;
   margin-top: -980px;
+}
+.device-3:hover {
+  margin-top: -1000px;
 }
 
 /* footer social icons */
@@ -549,6 +560,7 @@ a.socialIcon:hover, .socialHoverClass {
   height: 65px;
   font-size:20px;
   color: indianred;
+  cursor: default;
 }
 .social-circle li i {
   margin:0;
