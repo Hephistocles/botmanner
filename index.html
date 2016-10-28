@@ -83,7 +83,7 @@
                 </li>
                 -->
                     <li>
-                        <a class="page-scroll" href="#contact" onclick="show_form()">Contact</a>
+                        <a class="page-scroll" href="#contact" onclick="show_form(1);">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -105,7 +105,7 @@
                             <h2>Your customers have unique online voices.
                             <br />
                             Manner uses state-of-the-art deep reinforcement learning to allow you to understand your user's tone, and tailor your response to engage in the ways most likely to spark a meaningful connection.</h2>
-                            <a href="#download" class="btn btn-outline btn-xl page-scroll right-align" onclick="show_form()">Start Now</a>
+                            <a href="#download" class="btn btn-outline btn-xl page-scroll right-align" onclick="show_form(2);">Start Now</a>
                         </div>
                     </div>
                 </div>
@@ -279,7 +279,7 @@
         <div class="cta-content">
             <div class="container">
                 <h2>Just five lines for simple integration.</h2>
-                <a href="#contact" class="btn btn-outline btn-xl page-scroll" onclick="show_form()">Let's Get Started!</a>
+                <a href="#contact" class="btn btn-outline btn-xl page-scroll" onclick="show_form(3)">Let's Get Started!</a>
             </div>
         </div>
         <div class="overlay"></div>
@@ -321,8 +321,8 @@
 
     </footer>
 
-    <div id="contact-modal" style="display:none">
-        <form class="cd-form floating-labels" id="contact-form">
+    <div id="contact-modal" style="display:none" onclick="document.getElementById('contact-modal').style.display = 'none'; ga('send', 'event', 'Form', 'closed', 'Contact Form', 1);">
+        <form class="cd-form floating-labels" id="contact-form" onclick="event.stopPropagation();">
             <fieldset>
 
                 <div class="error-message" id="form-error" style="display:none">
@@ -400,12 +400,14 @@
             document.getElementById("contact-modal").style.display = "none"
         }
 
-        function show_form() {
-            document.getElementById("contact-modal").style.display = "block"
+        function show_form(button_number) {
+            document.getElementById("contact-modal").style.display = "block";
+            ga('send', 'event', 'Form', 'open', 'Contact Form', button_number);
         }
 
         function email_submit(event) {
             event.preventDefault();
+            ga('send', 'event', 'Form', 'submit', 'Contact Form', 1);
             var contact = {};
             contact.email = document.getElementById('cd-email').value;
             contact.first_name = document.getElementById('cd-first-name').value;
