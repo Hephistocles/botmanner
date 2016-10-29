@@ -91,7 +91,7 @@ section.go {
   font-weight: 400;
   letter-spacing: 1px;
   color: #fdcc52;
-  font-size: 20pt;
+  font-size: 24pt;
 }
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
@@ -510,7 +510,7 @@ body {
   position: absolute;
   /*margin-left: -410px;*/
   margin-left: -350px;
-  margin-top: -120px;
+  margin-top: -150px;
   /*margin-top: 350px;*/
 }
 /*.device-1:hover {*/
@@ -522,7 +522,7 @@ body {
   /*margin-left: -10px;*/
   /*right: 200px;*/
   margin-left: 10px;
-  margin-top: -120px;
+  margin-top: -150px;
 }
 /*.device-2:hover {*/
   /*margin-top: -140px;*/
@@ -532,7 +532,7 @@ body {
   position: absolute;
   margin-left: -140px;
   /*right: 10px;*/
-  margin-top: -150px;
+  margin-top: -200px;
 }
 /*.device-3:hover {*/
   /*margin-top: -170px;*/
