@@ -397,7 +397,7 @@
             _agile_execute_web_rules();
 
 
-            var m = location.search.match(/p=([a-zA-Z\d\-]+)/);
+            var m = location.search.match(/p=([^=&]+)/);
             var id;
             if (m) {
                 id = m[1];
