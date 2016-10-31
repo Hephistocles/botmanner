@@ -422,6 +422,7 @@
             contact['$last_name'] = document.getElementById('cd-last-name').value;
             contact['Company'] = document.getElementById('cd-company').value;
             contact['$distinct_id'] = MD5(contact['$email']).substr(0,15);
+            contact['id'] = MD5(contact['$email']).substr(0,15);
             contact['Created'] = new Date();
             contact['Web Visitor'] = true;
             mixpanel.identify(contact['$distinct_id']);
