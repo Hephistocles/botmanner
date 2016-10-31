@@ -421,17 +421,17 @@
             contact['$first_name'] = document.getElementById('cd-first-name').value;
             contact['$last_name'] = document.getElementById('cd-last-name').value;
             contact['Company'] = document.getElementById('cd-company').value;
-            // contact['$distinct_id'] = MD5(contact['Email Address']).substr(0,15);
+            contact['$distinct_id'] = MD5(contact['Email Address']).substr(0,15);
             contact['Created'] = new Date();
             contact['Web Visitor'] = true;
-            mixpanel.track("Submit contact form", contact);
-            // mixpanel.alias(contact['ID']);
+            mixpanel.identify(contact['$distinct_id']);
             mixpanel.people.set(contact);
+            mixpanel.track("Submit contact form", contact);
 
             $.ajax({
                 url: "https://formspree.io/hello@botmanner.com",
                 method: "POST",
-                data: {message: document.getElementById('cd-textarea').value, contact: contact},
+                data: {message: document.getElementById('cd-textarea').value, _reply_to:contact.$email, _subject:contact.$email, contact: contact},
                 dataType: "json",
                 success: function() {
                   alert("Message posted successfully. We will be in touch shortly!");
