@@ -149,6 +149,16 @@ section.go {
     background-color: white;
     border-color: rgba(34, 34, 34, 0.1);
   }
+  /*.navbar-default.affix:before {*/
+    /*content: '';*/
+    /*position: absolute;*/
+    /*width: 100%;*/
+    /*height: 2px;*/
+    /*background: linear-gradient(to left, #7b4397, #dc2430);*/
+    /*bottom: -2px;*/
+    /*left: 0;*/
+  /*}*/
+
   .navbar-default.affix .navbar-header .navbar-brand {
     color: indianred;
   }
