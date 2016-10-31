@@ -436,12 +436,13 @@
             mixpanel.people.set(contact);
 
             $.ajax({
-                url: "https://formspree.io/christopher@botmanner.com",
+                url: "https://formspree.io/hello@botmanner.com",
                 method: "POST",
                 data: {message: document.getElementById('cd-textarea').value, contact: contact},
                 dataType: "json",
                 success: function() {
                   alert("Message posted successfully. We will be in touch shortly!");
+                  console.log("Emailed!");
                   hide_form();
                 }
             });
