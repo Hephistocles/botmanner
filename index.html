@@ -323,7 +323,7 @@
 
     </footer>
 
-    <div id="contact-modal" style="display:none; overflow:auto" onclick="document.getElementById('contact-modal').style.display = 'none'; ga('send', 'event', 'Form', 'closed', 'Contact Form', 1);">
+    <div id="contact-modal" style="display:none; overflow:auto" onclick="document.getElementById('contact-modal').style.display = 'none'; ga('send', 'event', 'Form', 'closed', 'Contact Form', 1); mixpanel.track('Closed Form')">
         <form class="cd-form floating-labels" id="contact-form" onclick="event.stopPropagation();">
             <fieldset>
 
@@ -404,6 +404,7 @@
                 mixpanel.identify(id);
                 history.pushState("", document.title, window.location.pathname)
             }
+            mixpanel.track("Viewed Page");
 
             document.getElementById('contact-form').addEventListener("submit", email_submit);
 
@@ -416,6 +417,7 @@
         function show_form(button_number) {
             document.getElementById("contact-modal").style.display = "block";
             ga('send', 'event', 'Form', 'open', 'Contact Form', button_number);
+            mixpanel.track("Opened form", {"button": button_number})
         }
 
         function email_submit(event) {
@@ -430,6 +432,7 @@
             contact['Created'] = new Date();
             contact['Tags'] = "website visitor";
             contact['Custom Message'] = document.getElementById('cd-textarea').value;
+            mixpanel.track("Submit contact form", contact);
             console.log(contact);
 
             // update manner CRM spreadsheet
