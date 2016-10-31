@@ -387,22 +387,15 @@
     <!-- Theme JavaScript -->
     <script src="js/new-age.min.js"></script>
     <script src="js/main.js"></script>
-    <script id="_agile_min_js" type="text/javascript" src="https://botbot.agilecrm.com/stats/min/agile-min.js"></script>
     <script src="js/jquery-2.1.1.js"></script>
     <script type="text/javascript">
         window.addEventListener("load", function() {
             console.log("Loaded")
-            _agile.set_account('i8hthkulur3dhq9r1uifr7uqgj', 'botbot');
-            _agile.track_page_view();
-            _agile_execute_web_rules();
-
 
             var m = location.search.match(/p=([^=&]+)/);
-            var id;
             if (m) {
-                id = m[1];
-                mixpanel.identify(id);
                 history.pushState("", document.title, window.location.pathname)
+                mixpanel.identify(m[1]);
             }
             mixpanel.track("Viewed Page");
 
