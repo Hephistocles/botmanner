@@ -515,6 +515,28 @@
     </script>
     <!-- end Mixpanel -->
 
+    <script>
+        $(document).ready(function() {
+            function generateUUID() {
+                var d = new Date().getTime();
+                var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                    var r = (d + Math.random()*16)%16 | 0;
+                    d = Math.floor(d/16);
+                    return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+                });
+                return uuid;
+            }
+
+            var mixpanel_id = localStorage.getItem("mixpanel_id");
+            if(!mixpanel_id || mixpanel_id == "undefined") {
+                console.log("test");
+                mixpanel_id = generateUUID();
+                localStorage.setItem("mixpanel_id", mixpanel_id);
+            }
+
+            mixpanel.identify(mixpanel_id);
+        });
+    </script>
 </body>
 
 </html>
