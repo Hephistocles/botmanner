@@ -393,6 +393,7 @@
             console.log("Loaded")
 
             var m = location.search.match(/p=([^=&]+)/);
+            mixpanel.people.set({ "Web Visitor": true });
             if (m) {
                 history.pushState("", document.title, window.location.pathname)
                 mixpanel.identify(m[1]);
